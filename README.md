@@ -35,16 +35,16 @@ Attributes
 
 Attribute |  Default  | Description
 ----------|-----------|-------------
-`zrc.version`     | "0.1.0"     | Version of the zabbix-ruby-client to install (if `development` is false)
-`zrc.admin_email` | "root"      | email or unix account used in the `.forward` in the home of the `zrc` user
-`zrc.ruby_bin`    | "/opt/chef/embedded/bin/ruby" | path to the ruby used by zrc
-`zrc.gem_bin`     | "/opt/chef/embedded/bin/gem"  | path to the gem command used to install zrc
-`zrc.binpath`     | "/opt/chef/embedded/bin/zrc"  | path where the zrc command will be installed
-`zrc.zrc_send`    | "1"         | if set to "0" disables the sending of data
-`zrc.development` | false       | if set to true, use github master branch rather than the published gem version
-`zrc.server.host` | "localhost" | url of the zabbix server
-`zrc.server.port` | "10051"     | port of the trapper daemon on the zabbix server
-`zrc.schedule`    | __see below__ | schedule object used to build the tasks files and cron file
+zrc.version     | "0.1.0"     | Version of the zabbix-ruby-client to install (if `development` is false)
+zrc.admin_email | "root"      | email or unix account used in the `.forward` in the home of the `zrc` user
+zrc.ruby_bin    | "/opt/chef/embedded/bin/ruby" | path to the ruby used by zrc
+zrc.gem_bin     | "/opt/chef/embedded/bin/gem"  | path to the gem command used to install zrc
+zrc.binpath     | "/opt/chef/embedded/bin/zrc"  | path where the zrc command will be installed
+zrc.zrc_send    | "1"         | if set to "0" disables the sending of data
+zrc.development | false       | if set to true, use github master branch rather than the published gem version
+zrc.server.host | "localhost" | url of the zabbix server
+zrc.server.port | "10051"     | port of the trapper daemon on the zabbix server
+zrc.schedule    | __see below__ | schedule object used to build the tasks files and cron file
 
 Default schedule
 
