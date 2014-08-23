@@ -1,6 +1,8 @@
 Zabbix Ruby Client Cookbook
 ============================
 
+[![Cookbook Version](http://img.shields.io/cookbook/v/chef-sugar.svg)](https://supermarket.getchef.com/cookbooks/zabbix-ruby-client)
+
 This cookbook is designed for installing [zabbix-ruby-client](https://github.com/eduvo/zabbix-ruby-client) on an Ubuntu server, with zabbix-sender v2.2. It's based on the version 0.1.0 of zabbix-ruby-client (called zrc for short).
 
 The principle of it is to use the chef client embedded ruby from `/opt/chef/embedded/bin` so there is no need to install a system or versionned ruby on all servers just for that.
