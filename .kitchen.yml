@@ -1,0 +1,43 @@
+---
+driver:
+  name: docker
+  driver_config:
+    socket: <%= ENV['DOCKER_HOST'] || 'unix:///tmp/docker.sock' %>
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: ubuntu-14.04
+  - name: ubuntu-12.04
+  - name: centos-5.10
+    driver_config:
+      image: tianon/centos:5.10
+      platform: centos
+  - name: centos-6.5
+    driver_config:
+      image: tianon/centos:6.5
+      platform: centos
+
+suites:
+  - name: default
+    run_list:
+      - recipe[zabbix-ruby-client::default]
+    attributes:
+      zrc:
+        development: 0
+        zrc_send: "0"
+  - name: sender
+    run_list:
+      - recipe[zabbix-ruby-client::sender]
+    attributes:
+      zrc:
+        development: 0
+        zrc_send: "0"
+  - name: sender-dev
+    run_list:
+      - recipe[zabbix-ruby-client::sender]
+    attributes:
+      zrc:
+        development: 1
+        zrc_send: "0"

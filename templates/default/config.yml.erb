@@ -1,0 +1,12 @@
+---
+host: <%= node.name %>
+logsdir: /var/log/zrc
+loglevel: info
+datadir: /var/cache/zrc
+keepdata: no
+plugindirs:
+  - plugins
+zabbix:
+  host: <%= node.zrc.server.host %>
+  port: <%= node.zrc.server.port %>
+  sender: /usr/bin/zabbix_sender

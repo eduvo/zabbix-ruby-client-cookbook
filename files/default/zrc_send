@@ -1,0 +1,17 @@
+#!/bin/bash
+
+source /etc/default/zrc
+
+TASK=/etc/zrc/minutely.yml
+
+if [[ "$1" != "" && -f "/etc/zrc/${1}.yml" ]]; then
+  TASK="/etc/zrc/${1}.yml"
+fi
+
+if [ "$SHOW" != "1" -a "$ZRC_SEND" == "1" ]; then
+  $ZRC_BIN upload -c /etc/zrc/config.yml -t $TASK
+else
+  $ZRC_BIN show -c /etc/zrc/config.yml -t $TASK
+fi
+
+exit 0
