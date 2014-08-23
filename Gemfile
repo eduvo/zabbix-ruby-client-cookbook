@@ -5,7 +5,7 @@ gem 'pry'
 gem 'foodcritic'
 gem 'serverspec'
 gem 'test-kitchen'
-gem 'emeril'
+gem 'chef'
 
 group :integration do
   gem 'kitchen-docker'
