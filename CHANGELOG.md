@@ -1,8 +1,11 @@
 Zabbix Ruby Client Cookbook CHANGELOG
 =====================================
 
+## 0.0.12 - 2014-08-25
+- [mose] better attributes management. check the readme.
+
 ## 0.0.11 - 2014-08-25
-- [mose] transform tasks list from array to hash to it can be merged easier
+- [mose] `breaking change` transform tasks list from array to hash to it can be merged easier
 - [mose] fix kitchen tests
 
 ## 0.0.10 - 2014-08-24

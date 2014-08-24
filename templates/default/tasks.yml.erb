@@ -1,6 +1,6 @@
 ---
 <% @tasks.each do |name,args| %>
-- name: <%= name %>
+- name: <%= name[/[-_a-z]*/] %>
 <% if args -%>
   args: <%= args %>
 <% end %>

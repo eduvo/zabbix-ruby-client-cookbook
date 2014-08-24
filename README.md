@@ -56,27 +56,29 @@ Default schedule
   "minutely": {
     "cron": "* * * * *",
     "tasks": [
-      { "name": "load" },
-      { "name": "memory" },
-      { "name": "cpu" }
+      "load": null,
+      "memory": null,
+      "cpu": null
     ]
   },
   "hourly": {
     "cron": "0 * * * *",
     "tasks": [
-      { "name": "apt" }
+      "apt": null
     ]
   },
   "monthly": {
     "cron": "0 0 1 * *",
     "tasks": [
-      { "name": "sysinfo" }
+      "sysinfo": null
     ]
   }
 }
 ````
 
-if you want to add values to the schedule, use `default_attribute` in a role file. For example I have a `zrc-linode.json`, which adds disk and network interface to the minutely task role with:
+if you want to add values to the schedule, use `normal` in a role file. Note that you can append a number to the task name, it will be ignored and makes possible to have multiple calls to the same name.
+
+For example I have a `zrc-linode.json`, which adds disk and network interface to the minutely task role with:
 
 ````json
 {
@@ -84,14 +86,15 @@ if you want to add values to the schedule, use `default_attribute` in a role fil
   "chef_type": "role",
   "json_class": "Chef::Role",
   "description": "ZRC linode eth and disks",
-  "default_attributes": {
+  "normal_attributes": {
     "zrc": {
       "schedule": {
         "minutely": {
-          "tasks": [
-            { "name": "disk", "args": "[ xvda, /, xvda ]" },
-            { "name": "network", "args": "[ eth0 ]" }
-          ]
+          "tasks": {
+            "disk": "[ xvda, /, xvda ]",
+            "network0": "[ eth0 ]",
+            "network1": "[ eth1 ]"
+          }
         }
       }
     }
