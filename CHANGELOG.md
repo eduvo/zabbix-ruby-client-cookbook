@@ -3,7 +3,8 @@ Zabbix Ruby Client Cookbook CHANGELOG
 
 This file is used to list changes made in each version of the zabbix-ruby-client cookbook.
 
-## 0.0.10 - wip
+## 0.0.10 - 2014-08-24
+- [mose] fix on the `zrc.enable` syntax
 
 ## 0.0.9 - 2014-08-24
 - [mose] add a `zrc.enabled` attribute to inhibit cron job

@@ -41,3 +41,10 @@ suites:
       zrc:
         development: 1
         zrc_send: "0"
+  - name: sender-disabled
+    run_list:
+      - recipe[zabbix-ruby-client::sender]
+    attributes:
+      zrc:
+        enabled: false
+        zrc_send: "0"
