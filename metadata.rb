@@ -15,6 +15,6 @@ supports 'centos'
 supports 'redhat'
 supports 'oracle'
 
-# knife cookbook site share zabbix-ruby-client Utilities -c /home/mose/.chef/knife.rb
+# knife cookbook site share zabbix-ruby-client Utilities -c ~/.chef/knife.rb
 # git tag $(grep -o --color=never '[0-9]*\.[0-9]*\.[0-9]*' CHANGELOG.md | head -1)
 # git push --tags
