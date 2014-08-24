@@ -19,22 +19,22 @@ default.zrc.server.port = '10051'
 default.zrc.schedule    = {
   minutely: {
     cron: "* * * * *",
-    tasks: [
-      { name: 'load' },
-      { name: 'memory' },
-      { name: 'cpu' }
-    ]
+    tasks: {
+      load: nil,
+      memory: nil,
+      cpu: nil
+    }
   },
   hourly: {
     cron: "0 * * * *",
-    tasks: [
-      { name: 'apt' }
-    ]
+    tasks: {
+      apt: nil
+    }
   },
   monthly: {
     cron: "0 0 1 * *",
-    tasks: [
-      { name: 'sysinfo' }
-    ]
+    tasks: {
+      sysinfo: nil
+    }
   }
 }

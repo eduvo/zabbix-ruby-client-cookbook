@@ -25,21 +25,21 @@ suites:
       - recipe[zabbix-ruby-client::default]
     attributes:
       zrc:
-        development: 0
+        development: false
         zrc_send: "0"
   - name: sender
     run_list:
       - recipe[zabbix-ruby-client::sender]
     attributes:
       zrc:
-        development: 0
+        development: false
         zrc_send: "0"
   - name: sender-dev
     run_list:
       - recipe[zabbix-ruby-client::sender]
     attributes:
       zrc:
-        development: 1
+        development: true
         zrc_send: "0"
   - name: sender-disabled
     run_list:

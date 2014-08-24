@@ -1,7 +1,9 @@
 Zabbix Ruby Client Cookbook CHANGELOG
 =====================================
 
-This file is used to list changes made in each version of the zabbix-ruby-client cookbook.
+## 0.0.11 - 2014-08-25
+- [mose] transform tasks list from array to hash to it can be merged easier
+- [mose] fix kitchen tests
 
 ## 0.0.10 - 2014-08-24
 - [mose] fix on the `zrc.enable` syntax
