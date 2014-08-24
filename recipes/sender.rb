@@ -38,20 +38,10 @@ end
 if node.zrc.development
   include_recipe 'git'
   git "#{Chef::Config[:file_cache_path]}/zrc" do
-    repository "https://github.com/eduvo/zabbix-ruby-client.git"
+    repository node.zrc.gitrepo_url
     reference "master"
     action :sync
   end
-  # if Dir.exist? '/tmp/zrc'
-  #   execute "zrc pull" do
-  #     cwd '/tmp/zrc'
-  #     command "git pull"
-  #   end
-  # else
-  #   execute "zrc clone" do
-  #     command "git clone https://github.com/eduvo/zabbix-ruby-client.git /tmp/zrc"
-  #   end
-  # end
   execute "zrc bundle" do
     cwd "#{Chef::Config[:file_cache_path]}/zrc"
     user "root"
@@ -107,6 +97,9 @@ template "/etc/cron.d/zabbix" do
   owner 'root'
   group 'root'
   mode '0644'
+  if !node.zrc.enabled
+    action :delete
+  end
 end
 
 %w(/var/cache/zrc /var/log/zrc).each do |dir|
