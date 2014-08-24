@@ -43,7 +43,8 @@ zrc.gem_bin     | "/opt/chef/embedded/bin/gem"  | path to the gem command used t
 zrc.binpath     | "/opt/chef/embedded/bin/zrc"  | path where the zrc command will be installed
 zrc.zrc_send    | "1"         | if set to "0" disables the sending of data
 zrc.development | false       | if set to true, use github master branch rather than the published gem version
-zrc.git_repourl | "https://github.com/eduvo/zabbix-ruby-client.git" | if zrc.development is true, this repo will be used for getting the gem source
+zrc.repo_url    | "https://github.com/eduvo/zabbix-ruby-client.git" | if zrc.development is true, this repo will be used for getting the gem source
+zrc.repo_branch | "master"    | if zrc.development is true, this branch will be used for getting the gem source
 zrc.server.host | "localhost" | url of the zabbix server
 zrc.server.port | "10051"     | port of the trapper daemon on the zabbix server
 zrc.schedule    | __see below__ | schedule object used to build the tasks files and cron file
@@ -99,6 +100,10 @@ if you want to add values to the schedule, use `default_attribute` in a role fil
 ````
 
 If you need to overwrite the default values, you can use `overwrite_attributes`.
+
+## Debugging
+
+By setting `zrc.zrc_send` to '0', the cronjobs still run but they are not passed to zabbix_sender, they are sent to output, then sent to the admin_email, so you can check if the values are collected properly.
 
 ## Contributing
 

@@ -38,8 +38,8 @@ end
 if node.zrc.development
   include_recipe 'git'
   git "#{Chef::Config[:file_cache_path]}/zrc" do
-    repository node.zrc.gitrepo_url
-    reference "master"
+    repository node.zrc.repo_url
+    reference node.zrc.repo_branch
     action :sync
   end
   execute "zrc bundle" do
