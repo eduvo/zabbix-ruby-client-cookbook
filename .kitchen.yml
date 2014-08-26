@@ -1,23 +1,27 @@
 ---
 driver:
   name: docker
-  driver_config:
-    socket: <%= ENV['DOCKER_HOST'] || 'unix:///tmp/docker.sock' %>
 
 provisioner:
   name: chef_zero
 
 platforms:
   - name: ubuntu-14.04
+    driver_config:
+      socket: <%= ENV['DOCKER_HOST'] || 'unix:///tmp/docker.sock' %>
   - name: ubuntu-12.04
+    driver_config:
+      socket: <%= ENV['DOCKER_HOST'] || 'unix:///tmp/docker.sock' %>
   - name: centos-5.10
     driver_config:
       image: tianon/centos:5.10
       platform: centos
+      socket: <%= ENV['DOCKER_HOST'] || 'unix:///tmp/docker.sock' %>
   - name: centos-6.5
     driver_config:
       image: tianon/centos:6.5
       platform: centos
+      socket: <%= ENV['DOCKER_HOST'] || 'unix:///tmp/docker.sock' %>
 
 suites:
   - name: default
