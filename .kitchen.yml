@@ -8,20 +8,20 @@ provisioner:
 platforms:
   - name: ubuntu-14.04
     driver_config:
-      socket: <%= ENV['DOCKER_HOST'] || 'unix:///tmp/docker.sock' %>
+      socket: <%= ENV['DOCKER_HOST'] || 'unix:///var/run/docker.sock' %>
   - name: ubuntu-12.04
     driver_config:
-      socket: <%= ENV['DOCKER_HOST'] || 'unix:///tmp/docker.sock' %>
+      socket: <%= ENV['DOCKER_HOST'] || 'unix:///var/run/docker.sock' %>
   - name: centos-5.10
     driver_config:
       image: tianon/centos:5.10
       platform: centos
-      socket: <%= ENV['DOCKER_HOST'] || 'unix:///tmp/docker.sock' %>
+      socket: <%= ENV['DOCKER_HOST'] || 'unix:///var/run/docker.sock' %>
   - name: centos-6.5
     driver_config:
       image: tianon/centos:6.5
       platform: centos
-      socket: <%= ENV['DOCKER_HOST'] || 'unix:///tmp/docker.sock' %>
+      socket: <%= ENV['DOCKER_HOST'] || 'unix:///var/run/docker.sock' %>
 
 suites:
   - name: default
